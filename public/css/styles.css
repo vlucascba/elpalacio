@@ -29,7 +29,9 @@ header h1 {
 }
 
 footer {
+    display: flex;
     color: antiquewhite;
+    justify-content: center;
 }
 
 body {
