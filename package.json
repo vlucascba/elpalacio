@@ -1,0 +1,11 @@
+{
+  "name": "elpalacio",
+  "version": "1.0.0",
+  "description": "app sandwicheria",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "lucas german vargas",
+  "license": "ISC"
+}
