@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promociones - El Palacio de los Sándwiches</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/variedades.css">
 </head>
 <body>
     <h2>Promociones</h2>
+<div>
+    <ul>
+        <li><a href="index.html">Menu principal</a></li>
+    </ul>
+</div>
     <form id="orderForm">
         <label>
             <input type="radio" name="breadType" value="blanco" checked> Pan Blanco
@@ -56,7 +61,10 @@
 
         <button type="submit">Enviar Pedido</button>
     </form>
-
+    <footer>
+        <img src="\public\img\logo.png" alt=" Logo el palacio del sandwich">
+        <p>© 1949 El Palacio del Sándwich. </p>
+    </footer>
     <script>
         function changeQuantity(change) {
             var quantityInput = document.getElementById('quantity');
