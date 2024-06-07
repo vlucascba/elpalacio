@@ -17,7 +17,7 @@ ul {
     padding: 0 5%;
 }
 nav ul li a:hover {
-    background-color: #4ff31e;
+    background-color: #84ed64;
     transition: background-color 1s ease;;
     color: black;
 }

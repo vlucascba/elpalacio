@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Promociones - El Palacio de los Sándwiches</title>
+    <link rel="stylesheet" href="css/variedades.css">
 </head>
 <body>
+    <h2>Promociones</h2>
+<div>
+    <ul>
+        <li><a href="index.html">Menu principal</a></li>
+    </ul>
+</div>
+    <form id="orderForm">
+        <label>
+            <input type="radio" name="breadType" value="blanco" checked> Pan Blanco
+        </label>
+        <label>
+            <input type="radio" name="breadType" value="negro"> Pan Negro
+        </label>
+
+        <div>
+            <button type="button" onclick="changeQuantity(-1)">-</button>
+            <input type="number" name="quantity" id="quantity" value="1" min="1">
+            <button type="button" onclick="changeQuantity(1)">+</button>
+        </div>
+
+        <label>
+            <input type="radio" name="quantityType" value="unidad" checked> Por Unidad ($5)
+        </label>
+        <label>
+            <input type="radio" name="quantityType" value="mediaDocena"> Media Docena ($25)
+        </label>
+        <label>
+            <input type="radio" name="quantityType" value="docena"> Docena ($45)
+        </label>
+
+    </form>
+    <form id="orderForm">
+        <!-- ...otros campos del formulario... -->
+
+        <h3>Método de Pago</h3>
+        <label>
+            <input type="radio" name="paymentMethod" value="efectivo" checked> Efectivo
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="transferencia"> Transferencia
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="tarjetaCredito"> Tarjeta de Crédito
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="tarjetaDebito"> Tarjeta de Débito
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="qr"> QR
+        </label>
+
+        <button type="submit">Enviar Pedido</button>
+    </form>
     <footer>
         <img src="\public\img\logo.png" alt=" Logo el palacio del sandwich">
         <p>© 1949 El Palacio del Sándwich. </p>
     </footer>
+    <script>
+        function changeQuantity(change) {
+            var quantityInput = document.getElementById('quantity');
+            var currentQuantity = parseInt(quantityInput.value);
+            currentQuantity += change;
+            if(currentQuantity < 1) currentQuantity = 1;
+            quantityInput.value = currentQuantity;
+        }
+
+        document.getElementById('orderForm').onsubmit = function(event) {
+            event.preventDefault();
+            var formData = new FormData(event.target);
+            var data = {};
+            formData.forEach(function(value, key){
+                data[key] = value;
+            });
+            console.log(data); // Aquí enviarías 'data' a tu base de datos
+            // Aquí agregarías el código para enviar los datos al servidor
+        };
+    </script>
 </body>
 </html>

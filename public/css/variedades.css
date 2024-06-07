@@ -42,7 +42,7 @@ button {
     font-weight:600;
 }
 
-button:hover {
+li:hover {
     background-color: #4ff31e;
     transition: background-color 1s ease;;
     color: black;
@@ -71,4 +71,10 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+button:hover {
+    background-color: #d3f31e;
+    transition: background-color 1s ease;;
+    color: black;
 }
