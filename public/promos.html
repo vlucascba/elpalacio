@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promociones - El Palacio de los Sándwiches</title>
+    <script src="src\index.js"></script>
     <link rel="stylesheet" href="css/variedades.css">
 </head>
 <body>
@@ -64,25 +65,5 @@
         <img src="\public\img\logo.png" alt=" Logo el palacio del sandwich">
         <p>© 1949 El Palacio del Sándwich. </p>
     </footer>
-    <script>
-        function changeQuantity(change) {
-            var quantityInput = document.getElementById('quantity');
-            var currentQuantity = parseInt(quantityInput.value);
-            currentQuantity += change;
-            if(currentQuantity < 1) currentQuantity = 1;
-            quantityInput.value = currentQuantity;
-        }
-
-        document.getElementById('orderForm').onsubmit = function(event) {
-            event.preventDefault();
-            var formData = new FormData(event.target);
-            var data = {};
-            formData.forEach(function(value, key){
-                data[key] = value;
-            });
-            console.log(data); // Aquí enviarías 'data' a tu base de datos
-            // Aquí agregarías el código para enviar los datos al servidor
-        };
-    </script>
 </body>
 </html>
